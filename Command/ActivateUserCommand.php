@@ -18,7 +18,7 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Question\Question;
 
 /**
- * @author Antoine Hérault <antoine.herault@gmail.com>
+ * @author Antoine Hérault <antoine.herault@gmail.com> TO NOT HAVE
  */
 class ActivateUserCommand extends ContainerAwareCommand
 {
@@ -47,7 +47,8 @@ EOT
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $username = $input->getArgument('username');
-
+        
+        $me = $this->getArgument('gg');
         $manipulator = $this->getContainer()->get('fos_user.util.user_manipulator');
         $manipulator->activate($username);
 
